@@ -1,8 +1,6 @@
-import random
-
 def caesarEncrypt(plaintext, shift):
     encryptedText = ""
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    alphabet = "abcdefghijklmnopqrstuvwxyz!@#$%^&*"
     
     for i in plaintext:
         if i.islower():
@@ -15,7 +13,7 @@ def caesarEncrypt(plaintext, shift):
 
 def caesarDecrypt(encryptedText, shift):
     decryptedText = ""
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    alphabet = "abcdefghijklmnopqrstuvwxyz!@#$%^&*"
     
     for i in encryptedText:
         if i.islower():
@@ -28,12 +26,7 @@ def caesarDecrypt(encryptedText, shift):
 
 
 plaintext = input("Enter the plaintext: ")
-randList = [" "]
-for i in range(100,999):
-    randList.append(i)
-# print(randList)
-shiftAmount = random.choice(randList)
-print("Random key: ", shiftAmount)
+shiftAmount = int(input("Enter the shift amount: "))
 
 encrypted = caesarEncrypt(plaintext, shiftAmount)
 decrypted = caesarDecrypt(encrypted, shiftAmount)
